@@ -1,32 +1,34 @@
 package com.garcia.compras;
 
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class QueryGraphQL implements GraphQLQueryResolver {
+@Controller
+public class QueryGraphQL {
 
+  @Autowired private ClienteRepository clienteRepository;
+
+  @QueryMapping
   public String hello() {
     return "Hello, GraphQL";
   }
 
-  public int soma(int a, int b) {
+  @QueryMapping
+  public int soma(@Argument int a, @Argument int b) {
     return a + b;
   }
 
-  public Cliente cliente() {
-    return new Cliente("Leonardo", "leo@gmail.com");
+  @QueryMapping
+  public Cliente cliente(@Argument Long id) {
+    return clienteRepository.findById(id).orElse(null);
   }
 
+  @QueryMapping
   public List<Cliente> clientes() {
-    List<Cliente> list = new ArrayList<>();
-    for (int i = 0; i < 10; i++) {
-      list.add(new Cliente("Cliente " + i , "r" + i + "@gmail.com"));
-    }
-
-    return list;
+    return clienteRepository.findAll();
   }
 }
