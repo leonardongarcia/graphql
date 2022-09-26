@@ -1,36 +1,42 @@
 package com.garcia.compras.graphql;
 
 import com.garcia.compras.Cliente;
-import com.garcia.compras.ClienteRepository;
+import com.garcia.compras.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Controller
-public class QueryGraphQL {
+public class ClienteGraphQL {
 
-  @Autowired private ClienteRepository clienteRepository;
-
-  @QueryMapping
-  public String hello() {
-    return "Hello, GraphQL";
-  }
-
-  @QueryMapping
-  public int soma(@Argument int a, @Argument int b) {
-    return a + b;
-  }
+  @Autowired private ClienteService clienteService;
 
   @QueryMapping
   public Cliente cliente(@Argument Long id) {
-    return clienteRepository.findById(id).orElse(null);
+    return clienteService.findById(id);
   }
 
   @QueryMapping
   public List<Cliente> clientes() {
-    return clienteRepository.findAll();
+    return clienteService.findAll();
+  }
+
+  @MutationMapping
+  public Cliente save(@Argument Long id, @Argument String nome, @Argument String email) {
+    Cliente cliente = new Cliente();
+    cliente.setId(id);
+    cliente.setNome(nome);
+    cliente.setEmail(email);
+    return clienteService.save(cliente);
+  }
+
+  @MutationMapping
+  public Boolean delete(@Argument Long id) {
+    return clienteService.deleteById(id);
   }
 }

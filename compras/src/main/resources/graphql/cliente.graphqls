@@ -4,13 +4,14 @@ type Cliente{
     email:String
 }
 
-type Query {
-
-    hello:String
-
-    soma(a:Int, b:Int):Int
+extend type Query {
 
     cliente(id:ID):Cliente
 
     clientes:[Cliente]
+}
+
+extend type Mutation {
+    save(id:ID, nome:String, email:String):Cliente
+    delete(id:ID):Boolean
 }
