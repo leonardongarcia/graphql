@@ -5,6 +5,7 @@ import com.garcia.compras.repository.CompraRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -19,5 +20,10 @@ public class CompraService {
 
   public List<Compra> findAll() {
     return compraRepository.findAll();
+  }
+
+  public Compra save(Compra compra) {
+    compra.setData(LocalDate.now());
+    return compraRepository.save(compra);
   }
 }
