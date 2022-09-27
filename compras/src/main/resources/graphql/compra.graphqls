@@ -1,0 +1,11 @@
+type Compra {
+    id:ID!
+    quantidade:Int!
+    status:String!
+    cliente:Cliente
+    produto:Produto!
+}
+
+extend type Query {
+    compra(id:ID):Compra
+}
