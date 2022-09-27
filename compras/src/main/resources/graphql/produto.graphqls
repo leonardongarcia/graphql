@@ -7,5 +7,6 @@ type Produto {
 extend type Query {
 
     produto(id:ID!):Produto
+    produtos:[Produto]
 }
 
