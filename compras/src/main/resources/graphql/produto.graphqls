@@ -1,0 +1,11 @@
+type Produto {
+    id:ID!
+    nome:String!
+    valor:Float!
+}
+
+extend type Query {
+
+    produto(id:ID!):Produto
+}
+

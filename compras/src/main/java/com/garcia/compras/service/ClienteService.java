@@ -1,7 +1,7 @@
 package com.garcia.compras.service;
 
 import com.garcia.compras.Cliente;
-import com.garcia.compras.ClienteRepository;
+import com.garcia.compras.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
