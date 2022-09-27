@@ -34,4 +34,9 @@ public class ProdutoGraphQL {
     Produto produto = produtoMapper.toModel(produtoInput);
     return produtoService.save(produto);
   }
+
+  @MutationMapping
+  public Boolean deletarProduto(@Argument Long id) {
+    return produtoService.deleteById(id);
+  }
 }
