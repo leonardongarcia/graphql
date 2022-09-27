@@ -31,13 +31,13 @@ public class ClienteGraphQL {
   }
 
   @MutationMapping
-  public Cliente save(@Argument("input") ClienteInput clienteInput) {
+  public Cliente salvarCliente(@Argument("input") ClienteInput clienteInput) {
     Cliente cliente = clienteMapper.toModel(clienteInput);
     return clienteService.save(cliente);
   }
 
   @MutationMapping
-  public Boolean delete(@Argument Long id) {
+  public Boolean deletarCliente(@Argument Long id) {
     return clienteService.deleteById(id);
   }
 }

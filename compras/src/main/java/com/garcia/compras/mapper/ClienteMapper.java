@@ -10,7 +10,5 @@ public interface ClienteMapper {
 
   ClienteMapper INSTANCE = Mappers.getMapper(ClienteMapper.class);
 
-//  ClienteInput toInput(Cliente cliente);
-
   Cliente toModel(ClienteInput clienteInput);
 }
