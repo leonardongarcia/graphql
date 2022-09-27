@@ -5,6 +5,8 @@ import com.garcia.compras.repository.CompraRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CompraService {
@@ -13,5 +15,9 @@ public class CompraService {
 
   public Compra findById(Long id) {
     return compraRepository.findById(id).orElse(null);
+  }
+
+  public List<Compra> findAll() {
+    return compraRepository.findAll();
   }
 }

@@ -8,4 +8,5 @@ type Compra {
 
 extend type Query {
     compra(id:ID):Compra
+    compras:[Compra]
 }
