@@ -22,11 +22,11 @@ public class Compra {
   private int quantidade;
   private String status;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "cliente_id")
   private Cliente cliente;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "produto_id")
   private Produto produto;
 }
