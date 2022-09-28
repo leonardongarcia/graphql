@@ -2,6 +2,7 @@ package com.garcia.compras.service;
 
 import com.garcia.compras.Cliente;
 import com.garcia.compras.Compra;
+import com.garcia.compras.graphql.dto.CompraResumo;
 import com.garcia.compras.repository.CompraRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -38,5 +39,9 @@ public class CompraService {
       return true;
     }
     return false;
+  }
+
+  public List<CompraResumo> findAllComprasRelatorio() {
+    return compraRepository.findAllComprasRelatorio();
   }
 }

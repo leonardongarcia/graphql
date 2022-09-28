@@ -2,6 +2,7 @@ package com.garcia.compras.graphql;
 
 import com.garcia.compras.Compra;
 import com.garcia.compras.CompraInput;
+import com.garcia.compras.graphql.dto.CompraResumo;
 import com.garcia.compras.mapper.CompraMapper;
 import com.garcia.compras.service.CompraService;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,11 @@ public class CompraGraphQL {
   @QueryMapping
   public List<Compra> compras() {
     return compraService.findAll();
+  }
+
+  @QueryMapping
+  public List<CompraResumo> comprasRelatorio() {
+    return compraService.findAllComprasRelatorio();
   }
 
   @MutationMapping
