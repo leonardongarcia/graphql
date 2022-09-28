@@ -26,4 +26,12 @@ public class CompraService {
     compra.setData(LocalDate.now());
     return compraRepository.save(compra);
   }
+
+  public Boolean deleteById(Long id) {
+    if (compraRepository.existsById(id)) {
+      compraRepository.deleteById(id);
+      return true;
+    }
+    return false;
+  }
 }
