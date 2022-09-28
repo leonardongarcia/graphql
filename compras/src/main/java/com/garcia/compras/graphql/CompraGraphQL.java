@@ -6,6 +6,7 @@ import com.garcia.compras.graphql.dto.CompraResumo;
 import com.garcia.compras.mapper.CompraMapper;
 import com.garcia.compras.service.CompraService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
@@ -26,8 +27,8 @@ public class CompraGraphQL {
   }
 
   @QueryMapping
-  public List<Compra> compras() {
-    return compraService.findAll();
+  public List<Compra> compras(@Argument int page, @Argument int size) {
+    return compraService.findAll(PageRequest.of(page, size));
   }
 
   @QueryMapping

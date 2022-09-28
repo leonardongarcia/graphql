@@ -5,6 +5,8 @@ import com.garcia.compras.Compra;
 import com.garcia.compras.graphql.dto.CompraResumo;
 import com.garcia.compras.repository.CompraRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -20,8 +22,9 @@ public class CompraService {
     return compraRepository.findById(id).orElse(null);
   }
 
-  public List<Compra> findAll() {
-    return compraRepository.findAll();
+  public List<Compra> findAll(Pageable pageable) {
+    Page<Compra> comprasPage = compraRepository.findAll(pageable);
+    return comprasPage.getContent();
   }
 
   public List<Compra> findAllByCliente(Cliente cliente) {
