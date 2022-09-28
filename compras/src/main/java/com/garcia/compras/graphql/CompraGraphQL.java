@@ -34,4 +34,9 @@ public class CompraGraphQL {
     Compra compra = compraMapper.toModel(compraInput);
     return compraService.save(compra);
   }
+
+  @MutationMapping
+  public Boolean deletarCompra(@Argument Long id) {
+    return compraService.deleteById(id);
+  }
 }
