@@ -1,7 +1,7 @@
 package com.garcia.compras.graphql;
 
-import com.garcia.compras.Cliente;
-import com.garcia.compras.Compra;
+import com.garcia.compras.entity.Cliente;
+import com.garcia.compras.entity.Compra;
 import com.garcia.compras.service.CompraService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;

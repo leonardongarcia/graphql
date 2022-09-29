@@ -1,6 +1,6 @@
 package com.garcia.compras.service;
 
-import com.garcia.compras.Produto;
+import com.garcia.compras.entity.Produto;
 import com.garcia.compras.repository.ProdutoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

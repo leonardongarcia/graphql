@@ -1,4 +1,4 @@
-package com.garcia.compras;
+package com.garcia.compras.graphql.input;
 
 import lombok.Data;
 

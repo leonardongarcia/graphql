@@ -1,7 +1,7 @@
 package com.garcia.compras.mapper;
 
-import com.garcia.compras.Compra;
-import com.garcia.compras.CompraInput;
+import com.garcia.compras.entity.Compra;
+import com.garcia.compras.graphql.input.CompraInput;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

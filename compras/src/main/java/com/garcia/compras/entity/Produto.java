@@ -1,4 +1,4 @@
-package com.garcia.compras;
+package com.garcia.compras.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,11 +13,12 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Cliente {
+public class Produto {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   private String nome;
-  private String email;
+  private double valor;
 }

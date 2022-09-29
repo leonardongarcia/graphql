@@ -1,6 +1,6 @@
 package com.garcia.compras.graphql;
 
-import com.garcia.compras.Produto;
+import com.garcia.compras.entity.Produto;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 

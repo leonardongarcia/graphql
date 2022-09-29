@@ -1,7 +1,7 @@
 package com.garcia.compras.repository;
 
-import com.garcia.compras.Cliente;
-import com.garcia.compras.Compra;
+import com.garcia.compras.entity.Cliente;
+import com.garcia.compras.entity.Compra;
 import com.garcia.compras.graphql.dto.CompraResumo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

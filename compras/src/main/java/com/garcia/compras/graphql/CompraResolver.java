@@ -1,8 +1,8 @@
 package com.garcia.compras.graphql;
 
-import com.garcia.compras.Cliente;
-import com.garcia.compras.Compra;
-import com.garcia.compras.Produto;
+import com.garcia.compras.entity.Cliente;
+import com.garcia.compras.entity.Compra;
+import com.garcia.compras.entity.Produto;
 import com.garcia.compras.service.ClienteService;
 import com.garcia.compras.service.ProdutoService;
 import lombok.RequiredArgsConstructor;

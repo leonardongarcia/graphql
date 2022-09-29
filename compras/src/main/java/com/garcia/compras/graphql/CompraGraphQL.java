@@ -1,7 +1,7 @@
 package com.garcia.compras.graphql;
 
-import com.garcia.compras.Compra;
-import com.garcia.compras.CompraInput;
+import com.garcia.compras.entity.Compra;
+import com.garcia.compras.graphql.input.CompraInput;
 import com.garcia.compras.graphql.dto.CompraResumo;
 import com.garcia.compras.mapper.CompraMapper;
 import com.garcia.compras.service.CompraService;

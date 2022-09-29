@@ -1,7 +1,7 @@
 package com.garcia.compras.graphql;
 
-import com.garcia.compras.Cliente;
-import com.garcia.compras.ClienteInput;
+import com.garcia.compras.entity.Cliente;
+import com.garcia.compras.graphql.input.ClienteInput;
 import com.garcia.compras.mapper.ClienteMapper;
 import com.garcia.compras.service.ClienteService;
 import lombok.RequiredArgsConstructor;

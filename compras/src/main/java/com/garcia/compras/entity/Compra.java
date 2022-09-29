@@ -1,4 +1,4 @@
-package com.garcia.compras;
+package com.garcia.compras.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
