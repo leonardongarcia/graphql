@@ -12,15 +12,18 @@ spring:
 #        ddl-auto: none
         format_sql: true
 
-  flyway:
-    locations: classpath:db/migration
+#  flyway:
+#    locations: classpath:db/migration
 
 
 
   graphql:
     graphiql:
       enabled: true
-      path: /graphiql
+    schema:
+      file-extensions:
+        - graphql
+#      path: /graphiql
 
 
 #  pattern:
